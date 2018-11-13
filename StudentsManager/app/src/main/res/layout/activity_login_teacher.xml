@@ -1,68 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/backgroudlogin"
     android:orientation="vertical"
-    tools:context=".activities.TeacherLoginActivity">
+    tools:context=".activities.StudentLoginActivity">
 
 
-    <ImageView
-        android:id="@+id/imageView2"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
 
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="5dp"
-        android:src="@drawable/ic_school_top" />
+        >
+
+        <EditText
+
+            android:id="@+id/edtAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/custom_edit_text_bg"
+            android:drawableLeft="@drawable/ic_username"
+            android:drawablePadding="5dp"
+            android:ems="10"
+            android:hint="Username"
+            android:inputType="textPersonName" />
+
+        <EditText
+
+            android:id="@+id/edtPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/custom_edit_text_bg"
+            android:drawableLeft="@drawable/ic_password"
+            android:drawablePadding="5dp"
+            android:ems="10"
+            android:hint="Password"
+            android:inputType="textPassword" />
+
+        <CheckBox
+
+            android:id="@+id/saveLoginCheckBox"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:text="Remember me"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="100dp"
+            android:layout_marginTop="50dp"
+            android:background="#364242"
+            android:padding="10dp"
+            android:text="LOGIN"
+            android:textColor="#ffffff"
+            android:textSize="40dp" />
+    </LinearLayout>
 
 
-    <EditText
-        android:id="@+id/edtAccount"
-        android:layout_width="272dp"
-        android:layout_height="50dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="235dp"
-        android:background="@drawable/custom_edit_text_bg"
-        android:drawableLeft="@drawable/ic_username"
-        android:ems="10"
-        android:hint="Username"
-        android:inputType="textPersonName" />
-
-    <EditText
-        android:id="@+id/edtPassword"
-        android:layout_width="272dp"
-        android:layout_height="50dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="295dp"
-        android:background="@drawable/custom_edit_text_bg"
-        android:drawableLeft="@drawable/ic_password"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="textPassword" />
-
-    <Button
-        android:id="@+id/btnLogin"
-        android:layout_width="151dp"
-        android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="120dp"
-        android:background="@drawable/ic_btnlogin"
-        android:text="LOGIN"
-        android:textColor="#ffffff"
-        android:textSize="30dp" />
-
-    <CheckBox
-        android:id="@+id/saveLoginCheckBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/edtAccount"
-        android:layout_marginBottom="190dp"
-        android:text="Remember me" />
-
-</RelativeLayout>
+</LinearLayout>

@@ -42,10 +42,10 @@ public class StudentLoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_student);
         /*addEvent() sử dụng la crash app */
-        final EditText edtAccount = (EditText) findViewById(R.id.edtAccount);
-        final EditText edtPassword = (EditText) findViewById(R.id.edtPassword);
-        final Button btnLogin = (Button) findViewById(R.id.btnLogin);
-        final CheckBox saveLoginCheckBox = (CheckBox) findViewById(R.id.saveLoginCheckBox);
+        edtAccount =  findViewById(R.id.edtAccount);
+        edtPassword = findViewById(R.id.edtPassword);
+        btnLogin = findViewById(R.id.btnLogin);
+        saveLoginCheckBox = findViewById(R.id.saveLoginCheckBox);
 
         loginPreferences = getSharedPreferences("loginPrefs", MODE_PRIVATE);
         loginPrefsEditor = loginPreferences.edit();
@@ -61,6 +61,7 @@ public class StudentLoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 String username = edtAccount.getText().toString();
                 String password = edtPassword.getText().toString();
                 new AccessSever(username, password).execute();
@@ -71,6 +72,9 @@ public class StudentLoginActivity extends AppCompatActivity {
                     loginPrefsEditor.putString("username", username);
                     loginPrefsEditor.putString("password", password);
                     loginPrefsEditor.commit();
+
+
+
                 } else {
                     loginPrefsEditor.clear();
                     loginPrefsEditor.commit();
@@ -114,7 +118,7 @@ public class StudentLoginActivity extends AppCompatActivity {
                     .setType(MultipartBody.FORM)
                     .build();
             Request request = new Request.Builder()
-                    .url("http://192.168.60.102:8080/apiqlsv/studentlogin.php")
+                    .url("http://192.168.60.108:8080/apiqlsv/studentlogin.php")
                     .post(requestBody)
                     .addHeader("Content-Type", "application/json")
                     .build();
@@ -178,6 +182,12 @@ public class StudentLoginActivity extends AppCompatActivity {
             super.onPostExecute(s);
         }
     }
+    public void onDestroy() {
+
+        super.onDestroy();
+
+    }
+
 
 
 }

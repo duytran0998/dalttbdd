@@ -113,7 +113,7 @@ public class TeacherLoginActivity extends AppCompatActivity {
                     .setType(MultipartBody.FORM)
                     .build();
             Request request = new Request.Builder()
-                    .url("http://192.168.60.102:8080/apiqlsv/teacherlogin.php")
+                    .url("http://192.168.60.108:8080/apiqlsv/teacherlogin.php")
                     .post(requestBody)
                     .addHeader("Content-Type", "application/json")
                     .build();
