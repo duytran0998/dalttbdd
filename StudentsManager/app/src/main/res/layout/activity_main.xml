@@ -4,20 +4,52 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/backgroudlogin"
     tools:context=".activities.MainActivity">
 
 
-    <Button
-        android:id="@+id/btnStudent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageView
+        android:layout_marginTop="100dp"
+        android:layout_gravity="center"
         android:layout_weight="1"
-        android:text="Student Login " />
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_school_top" />
+    <LinearLayout
+        android:layout_margin="40dp"
+        android:layout_weight="2"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/btnTeacher"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="Teacher Login" />
+        <Button
+            android:drawableLeft="@drawable/icon_student"
+            android:textColor="#ffffff"
+            android:background="#364242"
+            android:layout_gravity="center"
+            android:id="@+id/btnStudent"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:textStyle="bold"
+            android:text="Student Login " />
+
+        <Button
+            android:paddingLeft="9dp"
+            android:textStyle="bold"
+            android:drawableLeft="@drawable/ic_userteacher"
+            android:layout_margin="10dp"
+            android:textColor="#ffffff"
+            android:background="#364242"
+            android:layout_gravity="center"
+            android:id="@+id/btnTeacher"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:text="Teacher Login" />
+
+
+
+    </LinearLayout>
+
 </LinearLayout>

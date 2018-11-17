@@ -25,6 +25,7 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 import tvd.pro.studentsmanager.model.AccountStudent;
 import tvd.pro.studentsmanager.R;
+import tvd.pro.studentsmanager.nextwork.URLserver;
 
 
 public class StudentLoginActivity extends AppCompatActivity {
@@ -118,7 +119,7 @@ public class StudentLoginActivity extends AppCompatActivity {
                     .setType(MultipartBody.FORM)
                     .build();
             Request request = new Request.Builder()
-                    .url("http://192.168.60.108:8080/apiqlsv/studentlogin.php")
+                    .url("http://"+ URLserver.ipServer+":8080/apiqlsv/studentlogin.php")
                     .post(requestBody)
                     .addHeader("Content-Type", "application/json")
                     .build();
@@ -182,6 +183,14 @@ public class StudentLoginActivity extends AppCompatActivity {
             super.onPostExecute(s);
         }
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent=new Intent(StudentLoginActivity.this,MainActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
     public void onDestroy() {
 
         super.onDestroy();

@@ -11,13 +11,13 @@
     <LinearLayout
         android:id="@+id/LLsinhvienone"
         android:layout_width="match_parent"
-        android:layout_height="411dp"
-        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
         android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="300dp"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
             android:layout_weight="1"
@@ -30,69 +30,81 @@
             android:orientation="vertical">
 
             <LinearLayout
+                android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
                 <TextView
+                    android:gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="10dp"
-                    android:layout_weight="1"
+                    android:layout_weight="3"
                     android:text="Tên:"
                     android:textSize="20dp" />
 
                 <TextView
+                    android:gravity="center"
                     android:id="@+id/txtUserName"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="10dp"
                     android:layout_weight="1"
-                    android:textSize="20dp" />
+                    android:textSize="15dp" />
             </LinearLayout>
 
             <LinearLayout
+                android:layout_weight="1"
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <TextView
+                    android:gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="10dp"
-                    android:layout_weight="1"
+                    android:layout_weight="3"
                     android:text="MSSV:"
                     android:textSize="20dp" />
 
                 <TextView
+                    android:gravity="center"
                     android:id="@+id/txtIdstudent"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="10dp"
                     android:layout_weight="1"
-                    android:textSize="20dp" />
+                    android:textSize="15dp" />
 
 
             </LinearLayout>
 
             <LinearLayout
+                android:layout_weight="1"
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <TextView
+                    android:gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="10dp"
-                    android:layout_weight="1"
+                    android:layout_weight="3"
                     android:text="Giới tính:"
-                    android:textSize="20dp" />
+                    android:textSize="12dp" />
 
                 <TextView
+
+                    android:gravity="center"
                     android:id="@+id/txtGedenr"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="10dp"
                     android:layout_weight="1"
-                    android:textSize="20dp" />
+                    android:textSize="12dp" />
 
 
             </LinearLayout>
@@ -113,80 +125,69 @@
         android:textStyle="bold" />
 
 
-    <RelativeLayout
+    <LinearLayout
         android:id="@+id/LLsinhvienthree"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:orientation="vertical">
 
-
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="65dp"
-            android:layout_marginTop="60dp"
-            android:text="Thông báo"
-            android:textColor="#ff0000" />
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
+            <ImageButton
+                android:id="@+id/imgScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="50dp"
+                android:background="@drawable/imgnotify" />
+
+            <ImageButton
+                android:id="@+id/imgNotify"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:background="@drawable/imgmark" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/textView1"
-            android:layout_marginLeft="240dp"
-            android:text="Xem điểm"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
 
-            android:textColor="#ff0000" />
+            <ImageButton
+                android:id="@+id/imgChangepassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="50dp"
+                android:background="@drawable/imgchangepassword" />
 
-        <ImageButton
-            android:id="@+id/imgScore"
-            android:layout_width="wrap_content"
+            <ImageButton
+                android:id="@+id/imgLogout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:background="@drawable/imglogout" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="250dp"
-            android:background="@drawable/imgmark" />
-
-        <ImageButton
-            android:id="@+id/imgNotify"
-            android:layout_width="wrap_content"
+            android:layout_weight="1"></LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="70dp"
-            android:background="@drawable/imgnotify" />
+            android:layout_weight="1"></LinearLayout>
 
-        <ImageButton
-            android:id="@+id/imgChangepassword"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="70dp"
-            android:layout_marginTop="130dp"
-            android:background="@drawable/imgchangepassword" />
 
-        <ImageButton
-            android:id="@+id/imgLogout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="250dp"
-            android:layout_marginTop="130dp"
-            android:background="@drawable/imglogout" />
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="60dp"
-            android:layout_marginTop="200dp"
-            android:text="Đổi mật khẩu"
-            android:textColor="#ff0000" />
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/textView3"
-            android:layout_marginLeft="240dp"
-            android:text="Đăng xuất"
-            android:textColor="#ff0000" />
-    </RelativeLayout>
+    </LinearLayout>
 
 
 </LinearLayout>

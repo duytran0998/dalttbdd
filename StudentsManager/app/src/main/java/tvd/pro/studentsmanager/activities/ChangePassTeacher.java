@@ -2,10 +2,10 @@ package tvd.pro.studentsmanager.activities;
 
 import android.content.Context;
 import android.os.AsyncTask;
-import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,9 +21,9 @@ import okhttp3.Response;
 import tvd.pro.studentsmanager.R;
 import tvd.pro.studentsmanager.nextwork.URLserver;
 
-public class ChangePassStudent extends AppCompatActivity {
+public class ChangePassTeacher extends AppCompatActivity {
     EditText oldPassWord, newPassWord, renewPassWord;
-    String getIdStudent, getPassWord;
+    String getIdTeacher, getPassWord;
     Button btnUpdate;
 
     @Override
@@ -36,7 +36,7 @@ public class ChangePassStudent extends AppCompatActivity {
         btnUpdate = findViewById(R.id.btnUpdate);
 
 
-        getIdStudent = getIntent().getStringExtra("sendIdStudent");
+        getIdTeacher = getIntent().getStringExtra("sendIdTeacher");
         getPassWord = getIntent().getStringExtra("sendPassWord");
 
 
@@ -98,11 +98,11 @@ public class ChangePassStudent extends AppCompatActivity {
             RequestBody requestBody = new MultipartBody.Builder()
                     .addFormDataPart("oldPW", oldPass)
                     .addFormDataPart("newPW", newPass)
-                    .addFormDataPart("idStudent", getIdStudent)
+                    .addFormDataPart("idTeacher", getIdTeacher)
                     .setType(MultipartBody.FORM)
                     .build();
             Request request = new Request.Builder()
-                    .url("http://"+URLserver.ipServer+":8080/apiqlsv/changepasswordst.php")
+                    .url("http://"+ URLserver.ipServer+":8080/apiqlsv/changepasswordst.php")
                     .post(requestBody)
                     .addHeader("Content-Type", "application/json")
                     .build();

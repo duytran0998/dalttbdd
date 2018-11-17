@@ -48,4 +48,10 @@ public class StudentActivity extends AppCompatActivity {
         txtGender.setText(AccountStudent.genDer);
 
     }
+    public void onBackPressed() {
+        Intent intent=new Intent(StudentActivity.this,MainActivity.class);
+        startActivity(intent);
+        finish();
+    }
 }
+
