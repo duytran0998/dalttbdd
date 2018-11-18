@@ -24,15 +24,15 @@ public class StudentActivity extends AppCompatActivity {
     private void getView() {
         txtName=findViewById(R.id.txtUserName);
         txtIdStudent=findViewById(R.id.txtIdstudent);
-        txtGender=findViewById(R.id.txtGedenr);
+        txtGender=findViewById(R.id.txtGender);
         imgBtnChangePass=findViewById(R.id.imgChangepassword);
 
         imgBtnChangePass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intentChangePass = new Intent(StudentActivity.this, ChangePassStudent.class);
-                intentChangePass.putExtra("sendIdStudent", AccountStudent.idStudent);
-                intentChangePass.putExtra("sendPassWord", AccountStudent.passWord);
+/*                intentChangePass.putExtra("sendIdStudent", AccountStudent.idStudent);
+                intentChangePass.putExtra("sendPassWord", AccountStudent.passWord);*/
 
                 startActivity(intentChangePass);
                 finish();
@@ -43,10 +43,9 @@ public class StudentActivity extends AppCompatActivity {
     private void getInforUser()
     {
 
-        txtName.setText(AccountStudent.studentName);
-        txtIdStudent.setText(AccountStudent.idStudent);
-        txtGender.setText(AccountStudent.genDer);
-
+        txtName.setText(getIntent().getStringExtra(StudentLoginActivity.STUDENTNAME));
+        txtIdStudent.setText(getIntent().getStringExtra(StudentLoginActivity.IDSTUDENT));
+        txtGender.setText(getIntent().getStringExtra(StudentLoginActivity.GENDER));
     }
     public void onBackPressed() {
         Intent intent=new Intent(StudentActivity.this,MainActivity.class);

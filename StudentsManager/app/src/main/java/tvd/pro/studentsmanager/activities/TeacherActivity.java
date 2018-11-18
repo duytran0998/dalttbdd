@@ -13,7 +13,7 @@ import tvd.pro.studentsmanager.R;
 
 public class TeacherActivity extends AppCompatActivity {
 
-    TextView txtTeacherName,txtIdFaculty,txtGender;
+    TextView txtTeacherName,txtIdTeacher,txtGender;
     ImageButton imgBtnChangePass;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,18 +24,17 @@ public class TeacherActivity extends AppCompatActivity {
 
     }
     private void getView() {
-        txtTeacherName=findViewById(R.id.txtUserName);
-        txtIdFaculty=findViewById(R.id.txtIdFaculty);
-        txtGender=findViewById(R.id.txtGedenr);
+        txtTeacherName=findViewById(R.id.txtTeacherName);
+        txtIdTeacher=findViewById(R.id.txtIdTeacher);
+        txtGender=findViewById(R.id.txtGender);
         imgBtnChangePass=findViewById(R.id.imgChangepassword);
 
         imgBtnChangePass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentChangePass = new Intent(TeacherActivity.this, ChangePassTeacher.class);
-               /* intentChangePass.putExtra("sendTeacher", AccountTeacher.idTeacher);
-                intentChangePass.putExtra("sendPassWord", AccountTeacher.passWord);*/
-
+                Intent intentChangePass = new Intent(TeacherActivity.this, ChangePassTeacherActivity.class);
+                intentChangePass.putExtra("sendTeacher", getIntent().getStringExtra(TeacherLoginActivity.USERNAME));
+                intentChangePass.putExtra("sendPassWord", getIntent().getStringExtra(TeacherLoginActivity.PASSWORD));
                 startActivity(intentChangePass);
                 finish();
             }
@@ -45,12 +44,11 @@ public class TeacherActivity extends AppCompatActivity {
     private void getInforUser()
     {
 
-        final Intent intent = getIntent();
-        String s = intent.getStringExtra(TeacherLoginActivity.TEACHERNAME);
-        txtTeacherName.setText(s);
 
-/*        txtIdFaculty.setText(tc.getIdFaculty());
-        txtGender.setText(tc.getGenDer());*/
+        txtTeacherName.setText(getIntent().getStringExtra(TeacherLoginActivity.TEACHERNAME));
+        txtIdTeacher.setText(getIntent().getStringExtra(TeacherLoginActivity.IDTEACHER));
+        txtGender.setText(getIntent().getStringExtra(TeacherLoginActivity.GENDER));
+
 
     }
     public void onBackPressed() {

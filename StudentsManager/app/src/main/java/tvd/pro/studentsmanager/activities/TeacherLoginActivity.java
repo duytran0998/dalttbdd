@@ -32,10 +32,12 @@ public class TeacherLoginActivity extends AppCompatActivity {
     private SharedPreferences loginPreferences;
     private SharedPreferences.Editor loginPrefsEditor;
     private Boolean saveLogin;
-    public static final String TEACHERNAME=null;
-
-
-
+    public static final String TEACHERNAME="";
+    public static final String IDFACULTY="";
+    public static final String GENDER=null;
+    public static final String IDTEACHER="c";
+    public static final String PASSWORD="a";
+    public static final String USERNAME="b";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,8 +63,8 @@ public class TeacherLoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                String username = edtAccount.getText().toString();
-                String password = edtPassword.getText().toString();
+                final String username = edtAccount.getText().toString();
+                final String password = edtPassword.getText().toString();
                 //truyen tham so vao
                 Map<String, String> parameter = new HashMap<>();
                 parameter.put("username", username);
@@ -72,18 +74,48 @@ public class TeacherLoginActivity extends AppCompatActivity {
                     @Override
                     public void completed(Object obj) {
                         AccountTeacher tc= (AccountTeacher) obj;
-                       switch (tc.getError()){
+                        int a = tc.getError();
+                        if(a == 0){
+
+                            Intent tec_intent=new Intent(TeacherLoginActivity.this,TeacherActivity.class);
+                            tec_intent.putExtra(TEACHERNAME,tc.getTeacherName());
+                            tec_intent.putExtra(IDTEACHER,tc.getIdTeacher());
+                            tec_intent.putExtra(GENDER,tc.getGenDer());
+                            tec_intent.putExtra(USERNAME,tc.getUserName());
+                            tec_intent.putExtra(IDTEACHER,tc.getIdTeacher());
+                            tec_intent.putExtra(PASSWORD,password);
+                            startActivity(tec_intent);
+                            finish();
+                        }
+
+                        /*else{
+                            if(a==-1){
+                                ShowMessage(getBaseContext(),"There was an error while processing request. Please try again later.");
+                            }else{
+                                ShowMessage(getBaseContext(),"Username or Password is wrong.");
+                            }
+                        }*/
+
+
+/*                       switch (tc.getError()){
+
                            case 0:
                                Intent tec_intent=new Intent(TeacherLoginActivity.this,TeacherActivity.class);
                                tec_intent.putExtra(TEACHERNAME,tc.getTeacherName());
-/*                               tec_intent.putExtra("idFaculty",tc.getIdFaculty());
-                               tec_intent.putExtra("genDer",tc.getGenDer());
-                               tec_intent.putExtra("idTeacher",tc.getIdTeacher());
-                               tec_intent.putExtra("passWord",tc.getPassWord());*/
+                               tec_intent.putExtra(IDTEACHER,tc.getIdTeacher());
+                               tec_intent.putExtra(GENDER,tc.getGenDer());
 
+*//*                               tec_intent.putExtra(IDTEACHER,tc.getIdTeacher());
+                               tec_intent.putExtra(PASSWORD,tc.getPassWord());*//*
                                startActivity(tec_intent);
                                finish();
-                       }
+                               break;
+
+                           case -1: ShowMessage(getBaseContext(),"There was an error while processing request. Please try again later.");break;
+                           default:
+                               ShowMessage(getBaseContext(),"Username or Password is wrong.");
+
+                       }*/
                     }
                 });
                 request.execute(parameter);

@@ -21,7 +21,7 @@ import okhttp3.Response;
 import tvd.pro.studentsmanager.R;
 import tvd.pro.studentsmanager.nextwork.URLserver;
 
-public class ChangePassTeacher extends AppCompatActivity {
+public class ChangePassTeacherActivity extends AppCompatActivity {
     EditText oldPassWord, newPassWord, renewPassWord;
     String getIdTeacher, getPassWord;
     Button btnUpdate;
@@ -29,7 +29,7 @@ public class ChangePassTeacher extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_change_pass_student);
+        setContentView(R.layout.activity_change_pass_teacher);
         oldPassWord = findViewById(R.id.oldPassword);
         newPassWord = findViewById(R.id.newPassWord);
         renewPassWord = findViewById(R.id.renewPassWord);
@@ -102,7 +102,7 @@ public class ChangePassTeacher extends AppCompatActivity {
                     .setType(MultipartBody.FORM)
                     .build();
             Request request = new Request.Builder()
-                    .url("http://"+ URLserver.ipServer+":8080/apiqlsv/changepasswordst.php")
+                    .url("http://"+ URLserver.ipServer+":8080/apiqlsv/changepasswordtc.php")
                     .post(requestBody)
                     .addHeader("Content-Type", "application/json")
                     .build();

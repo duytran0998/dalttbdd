@@ -42,7 +42,7 @@
                     android:layout_margin="10dp"
                     android:layout_weight="3"
                     android:text="Tên:"
-                    android:textSize="20dp" />
+                    android:textSize="17dp" />
 
                 <TextView
                     android:gravity="center"
@@ -67,7 +67,7 @@
                     android:layout_margin="10dp"
                     android:layout_weight="3"
                     android:text="MSSV:"
-                    android:textSize="20dp" />
+                    android:textSize="17dp" />
 
                 <TextView
                     android:gravity="center"
@@ -94,12 +94,12 @@
                     android:layout_margin="10dp"
                     android:layout_weight="3"
                     android:text="Giới tính:"
-                    android:textSize="12dp" />
+                    android:textSize="17dp" />
 
                 <TextView
 
                     android:gravity="center"
-                    android:id="@+id/txtGedenr"
+                    android:id="@+id/txtGender"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="10dp"
