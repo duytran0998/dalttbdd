@@ -21,7 +21,7 @@ import okhttp3.Response;
 import tvd.pro.studentsmanager.R;
 import tvd.pro.studentsmanager.nextwork.URLserver;
 
-public class ChangePassStudent extends AppCompatActivity {
+public class ChangePassStudentActivity extends AppCompatActivity {
     EditText oldPassWord, newPassWord, renewPassWord;
     String getIdStudent, getPassWord;
     Button btnUpdate;

@@ -20,7 +20,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.ChangePassStudent" />
+        <activity android:name=".activities.ChangePassStudentActivity" />
         <activity android:name=".activities.TeacherActivity" />
         <activity android:name=".activities.TeacherLoginActivity" />
         <activity android:name=".activities.StudentLoginActivity" />

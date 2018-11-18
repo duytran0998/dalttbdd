@@ -47,7 +47,6 @@ public class ChangePassTeacherActivity extends AppCompatActivity {
                 final String newPass = newPassWord.getText().toString();
                 final String renewPass = renewPassWord.getText().toString();
 
-
                 if (oldPass.equals(getPassWord)) {
                     if ((newPass.equals(renewPass))) {
                         new ChangeInfoOnServer(oldPass, newPass).execute();

@@ -65,7 +65,7 @@ public class StudentLoginActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 final String username = edtAccount.getText().toString();
-                String password = edtPassword.getText().toString();
+                final String password = edtPassword.getText().toString();
                 //truyen tham so vao
                 Map<String, String> parameter = new HashMap<>();
                 parameter.put("username", username);
@@ -76,7 +76,6 @@ public class StudentLoginActivity extends AppCompatActivity {
                     public void completed(Object obj) {
                         AccountStudent st= (AccountStudent) obj;
                         int a = st.getError();
-                        Toast.makeText(StudentLoginActivity.this, st.getPassWord(), Toast.LENGTH_SHORT).show();
                         if(a == 0){
 
                             Intent stc_intent=new Intent(StudentLoginActivity.this,StudentActivity.class);
@@ -84,7 +83,7 @@ public class StudentLoginActivity extends AppCompatActivity {
                             stc_intent.putExtra(IDSTUDENT,st.getIdStudent());
                             stc_intent.putExtra(GENDER,st.getGenDer());
                             stc_intent.putExtra(USERNAME,st.getUserName());
-                            stc_intent.putExtra(PASSWORD,st.getPassWord());
+                            stc_intent.putExtra(PASSWORD,password);
                             startActivity(stc_intent);
                             finish();
                         }
