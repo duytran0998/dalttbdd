@@ -2,16 +2,12 @@ package tvd.pro.studentsmanager.activities;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.nfc.Tag;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import tvd.pro.studentsmanager.model.AccountTeacher;
 import tvd.pro.studentsmanager.R;
 
 public class TeacherActivity extends AppCompatActivity {
@@ -59,7 +55,7 @@ public class TeacherActivity extends AppCompatActivity {
                 intentChangePassTC.putExtra("sendIdTeacher", getIntent().getStringExtra(TeacherLoginActivity.IDTEACHER));
                 intentChangePassTC.putExtra("sendPassWord", getIntent().getStringExtra(TeacherLoginActivity.PASSWORD));
                 startActivity(intentChangePassTC);
-                finish();
+
             }
         });
 
@@ -81,10 +77,6 @@ public class TeacherActivity extends AppCompatActivity {
         ed.putBoolean("setLoggingOut", status);
         ed.commit();
     }
-    public void onBackPressed() {
-        Intent intent=new Intent(TeacherActivity.this,TeacherLoginActivity.class);
-        startActivity(intent);
-        finish();
-    }
+
 }
 

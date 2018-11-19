@@ -30,11 +30,11 @@ public class TeacherLoginActivity extends AppCompatActivity {
     CheckBox saveLoginCheckBox;
 
     private SharedPreferences loginPreferences;
-    private SharedPreferences.Editor loginPrefsEditor;
+    public static SharedPreferences.Editor loginPrefsEditor;
     private Boolean saveLogin;
-    public static final String TEACHERNAME="";
-    public static final String IDFACULTY="";
-    public static final String GENDER=null;
+    public static final String TEACHERNAME="f";
+    public static final String IDFACULTY="e";
+    public static final String GENDER="d";
     public static final String IDTEACHER="c";
     public static final String PASSWORD="a";
     public static final String USERNAME="b";
@@ -62,7 +62,6 @@ public class TeacherLoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 final String username = edtAccount.getText().toString();
                 final String password = edtPassword.getText().toString();
                 //truyen tham so vao
@@ -73,49 +72,31 @@ public class TeacherLoginActivity extends AppCompatActivity {
                 TeacherLoginRequest request= new TeacherLoginRequest(new SeverRequest.SeverRequestListener() {
                     @Override
                     public void completed(Object obj) {
-                        AccountTeacher tc= (AccountTeacher) obj;
-                        int a = tc.getError();
-                        if(a == 0){
+                        if (obj != null) {
+                            AccountTeacher tc = (AccountTeacher) obj;
 
-                            Intent tec_intent=new Intent(TeacherLoginActivity.this,TeacherActivity.class);
-                            tec_intent.putExtra(TEACHERNAME,tc.getTeacherName());
-                            tec_intent.putExtra(IDTEACHER,tc.getIdTeacher());
-                            tec_intent.putExtra(GENDER,tc.getGenDer());
-                            tec_intent.putExtra(USERNAME,tc.getUserName());
-                            tec_intent.putExtra(IDTEACHER,tc.getIdTeacher());
-                            tec_intent.putExtra(PASSWORD,password);
-                            startActivity(tec_intent);
-                            finish();
-                        }
+                            if (AccountTeacher.error == 0) {
 
-                        /*else{
-                            if(a==-1){
-                                ShowMessage(getBaseContext(),"There was an error while processing request. Please try again later.");
-                            }else{
-                                ShowMessage(getBaseContext(),"Username or Password is wrong.");
+                                Intent tec_intent = new Intent(TeacherLoginActivity.this, TeacherActivity.class);
+                                tec_intent.putExtra(TEACHERNAME, tc.getTeacherName());
+                                tec_intent.putExtra(IDTEACHER, tc.getIdTeacher());
+                                tec_intent.putExtra(GENDER, tc.getGenDer());
+                                tec_intent.putExtra(USERNAME, tc.getUserName());
+                                tec_intent.putExtra(IDTEACHER, tc.getIdTeacher());
+                                tec_intent.putExtra(PASSWORD, password);
+                                startActivity(tec_intent);
+
                             }
-                        }*/
 
 
-/*                       switch (tc.getError()){
-
-                           case 0:
-                               Intent tec_intent=new Intent(TeacherLoginActivity.this,TeacherActivity.class);
-                               tec_intent.putExtra(TEACHERNAME,tc.getTeacherName());
-                               tec_intent.putExtra(IDTEACHER,tc.getIdTeacher());
-                               tec_intent.putExtra(GENDER,tc.getGenDer());
-
-*//*                               tec_intent.putExtra(IDTEACHER,tc.getIdTeacher());
-                               tec_intent.putExtra(PASSWORD,tc.getPassWord());*//*
-                               startActivity(tec_intent);
-                               finish();
-                               break;
-
-                           case -1: ShowMessage(getBaseContext(),"There was an error while processing request. Please try again later.");break;
-                           default:
-                               ShowMessage(getBaseContext(),"Username or Password is wrong.");
-
-                       }*/
+                        }
+                        else {
+                            if (AccountTeacher.error==-1) {
+                                ShowMessage(getBaseContext(), "There was an error while processing request. Please try again later.");
+                            } else {
+                                ShowMessage(getBaseContext(), "Username or Password is wrong.");
+                            }
+                        }
                     }
                 });
                 request.execute(parameter);
@@ -152,18 +133,8 @@ public class TeacherLoginActivity extends AppCompatActivity {
 
 
 
-    @Override
-    public void onBackPressed() {
-        Intent intent=new Intent(TeacherLoginActivity.this,MainActivity.class);
-        startActivity(intent);
-        finish();
-    }
 
-    public void onDestroy() {
 
-        super.onDestroy();
-
-    }
 
 
 

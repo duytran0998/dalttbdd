@@ -33,7 +33,7 @@ public class StudentActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intentNotify = new Intent(StudentActivity.this,StudentNotify.class);
                 startActivity(intentNotify);
-                finish();
+                /*finish();*/
             }
         });
 
@@ -65,7 +65,7 @@ public class StudentActivity extends AppCompatActivity {
                 intentChangePassST.putExtra("sendPassWord", getIntent().getStringExtra(StudentLoginActivity.PASSWORD));
 
                 startActivity(intentChangePassST);
-                finish();
+
             }
         });
 
@@ -84,11 +84,6 @@ public class StudentActivity extends AppCompatActivity {
         ed.putBoolean("setLoggingOut", status);
         ed.commit();
     }
-    public void onBackPressed() {
-        Intent intent=new Intent(StudentActivity.this,StudentLoginActivity.class);
-        intent.setAction(null);
-        startActivity(intent);
-        finish();
-    }
+
 }
 

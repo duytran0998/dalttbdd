@@ -18,7 +18,7 @@ public class AccountTeacher {
     @SerializedName("genDer")
     private  String genDer;
     @SerializedName("error")
-    private int error;
+    public static int error;
 
     public String getIdTeacher() {
         return idTeacher;
@@ -44,9 +44,6 @@ public class AccountTeacher {
         return genDer;
     }
 
-    public int getError() {
-        return error;
-    }
 
     public void setIdTeacher(String idTeacher) {
         this.idTeacher = idTeacher;
@@ -72,9 +69,6 @@ public class AccountTeacher {
         this.genDer = genDer;
     }
 
-    public void setError(int error) {
-        this.error = error;
-    }
 
     public AccountTeacher(String idTeacher, String teacherName, String idFaculty, String userName, String passWord, String genDer) {
         this.idTeacher = idTeacher;

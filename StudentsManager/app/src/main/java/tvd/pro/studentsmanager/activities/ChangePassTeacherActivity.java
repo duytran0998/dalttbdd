@@ -3,10 +3,11 @@ package tvd.pro.studentsmanager.activities;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -48,10 +49,19 @@ public class ChangePassTeacherActivity extends AppCompatActivity {
                 final String newPass = newPassWord.getText().toString();
                 final String renewPass = renewPassWord.getText().toString();
 
+
                 if (oldPass.equals(getPassWord)) {
                     if ((newPass.equals(renewPass))) {
                         new ChangeInfoOnServer(oldPass, newPass).execute();
                         ShowMessage(getBaseContext(), "Đổi mật khẩu thành công!");
+
+
+                        Intent intentLoginTC = new Intent(ChangePassTeacherActivity.this, TeacherLoginActivity.class);
+                        TeacherLoginActivity.loginPrefsEditor.clear();
+                        TeacherLoginActivity.loginPrefsEditor.commit();
+                        startActivity(intentLoginTC);
+
+
                     } else {
                         if (!newPass.equals(renewPass)) {
                             ShowMessage(getBaseContext(), "Nhập lại mật khẩu mới không hợp lệ!");
@@ -98,11 +108,11 @@ public class ChangePassTeacherActivity extends AppCompatActivity {
             RequestBody requestBody = new MultipartBody.Builder()
                     .addFormDataPart("oldPW", oldPass)
                     .addFormDataPart("newPW", newPass)
-                    .addFormDataPart("idTeacher", getIdTeacher)
+                    .addFormDataPart("idStudent", getIdTeacher)
                     .setType(MultipartBody.FORM)
                     .build();
             Request request = new Request.Builder()
-                    .url("http://"+ URLserver.ipServer+":8080/apiqlsv/changepasswordtc.php")
+                    .url("http://" + URLserver.ipServer + ":8080/apiqlsv/changepasswordtc.php")
                     .post(requestBody)
                     .addHeader("Content-Type", "application/json")
                     .build();
@@ -120,19 +130,8 @@ public class ChangePassTeacherActivity extends AppCompatActivity {
             return null;
         }
 
-        @Override
-        protected void onPostExecute(String s) {
-            if (response.isSuccessful()) {
 
-            }
-            super.onPostExecute(s);
-        }
     }
-    @Override
-    public void onBackPressed() {
-        Intent intent=new Intent(ChangePassTeacherActivity.this,TeacherActivity.class);
-        startActivity(intent);
-        finish();
-    }
+
 
 }

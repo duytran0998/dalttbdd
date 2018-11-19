@@ -1,11 +1,9 @@
 package tvd.pro.studentsmanager.nextwork;
 
 
-import android.widget.Toast;
 
 
 import com.google.gson.Gson;
-import com.google.gson.JsonObject;
 
 import org.json.JSONObject;
 
@@ -16,6 +14,7 @@ import okhttp3.MultipartBody;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
+import tvd.pro.studentsmanager.model.AccountStudent;
 import tvd.pro.studentsmanager.model.AccountTeacher;
 
 public class TeacherLoginRequest extends SeverRequest {
@@ -25,13 +24,8 @@ public class TeacherLoginRequest extends SeverRequest {
 
     @Override
     protected Request prepare(Map<String, String> parameter) {
-
         String user = parameter.get("username");
         String pass = parameter.get("password");
-
-
-
-
         RequestBody requestBody = new MultipartBody.Builder()
                 .addFormDataPart("username", user)
                 .addFormDataPart("password",pass)
@@ -43,19 +37,25 @@ public class TeacherLoginRequest extends SeverRequest {
                 .addHeader("Content-Type", "application/json")
                 .build();
         return request;
-
     }
-
     @Override
     protected Object process(String data) {
         try {
             final JSONObject json = new JSONObject(data);
+            AccountTeacher.error=(json.getInt("error"));
 
-            JSONObject user=json.getJSONObject("data");
-            Gson gson=new Gson();
-            AccountTeacher tc=gson.fromJson(String.valueOf(user),AccountTeacher.class);
-            tc.setError(json.getInt("error"));
-            return tc;
+            if(AccountTeacher.error==0){
+                JSONObject user=json.getJSONObject("data");
+                Gson gson=new Gson();
+                AccountTeacher tc=gson.fromJson(String.valueOf(user),AccountTeacher.class);
+                AccountTeacher.error=(json.getInt("error"));
+                return tc;
+            }
+            else{
+
+                return null;
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
 

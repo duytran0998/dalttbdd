@@ -20,7 +20,7 @@ public class AccountStudent {
     @SerializedName("idClass")
     private int idClass;
     @SerializedName("error")
-    private int error;
+    public static int error;
 
     public String getIdStudent() {
         return idStudent;
@@ -78,13 +78,9 @@ public class AccountStudent {
         this.idClass = idClass;
     }
 
-    public int getError() {
-        return error;
-    }
 
-    public void setError(int error) {
-        this.error = error;
-    }
+
+
 
     public AccountStudent(String idStudent, String studentName, String studentAddress, String userName, String passWord, String genDer, int idClass) {
         this.idStudent = idStudent;

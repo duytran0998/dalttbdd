@@ -44,12 +44,20 @@ public class StudentLoginRequest extends SeverRequest {
     protected Object process(String data) {
         try {
             final JSONObject json = new JSONObject(data);
+            AccountStudent.error=(json.getInt("error"));
 
-            JSONObject user=json.getJSONObject("data");
-            Gson gson=new Gson();
-            AccountStudent st=gson.fromJson(String.valueOf(user),AccountStudent.class);
-            st.setError(json.getInt("error"));
-            return st;
+            if(AccountStudent.error==0){
+                JSONObject user=json.getJSONObject("data");
+                Gson gson=new Gson();
+                AccountStudent st=gson.fromJson(String.valueOf(user),AccountStudent.class);
+                AccountStudent.error=(json.getInt("error"));
+                return st;
+            }
+            else{
+
+                return null;
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
 

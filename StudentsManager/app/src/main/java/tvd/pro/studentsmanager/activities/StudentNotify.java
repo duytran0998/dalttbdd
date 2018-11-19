@@ -27,10 +27,5 @@ public class StudentNotify extends AppCompatActivity {
 
 
     }
-    @Override
-    public void onBackPressed() {
-        Intent intent=new Intent(StudentNotify.this,StudentActivity.class);
-        startActivity(intent);
-        finish();
-    }
+
 }

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v7.app.AppCompatActivity;
@@ -53,6 +54,14 @@ public class ChangePassStudentActivity extends AppCompatActivity {
                     if ((newPass.equals(renewPass))) {
                         new ChangeInfoOnServer(oldPass, newPass).execute();
                         ShowMessage(getBaseContext(), "Đổi mật khẩu thành công!");
+
+
+                        Intent intentLoginST = new Intent(ChangePassStudentActivity.this, StudentLoginActivity.class);
+                        StudentLoginActivity.loginPrefsEditor.clear();
+                        StudentLoginActivity.loginPrefsEditor.commit();
+                        startActivity(intentLoginST);
+
+
                     } else {
                         if (!newPass.equals(renewPass)) {
                             ShowMessage(getBaseContext(), "Nhập lại mật khẩu mới không hợp lệ!");
@@ -103,7 +112,7 @@ public class ChangePassStudentActivity extends AppCompatActivity {
                     .setType(MultipartBody.FORM)
                     .build();
             Request request = new Request.Builder()
-                    .url("http://"+URLserver.ipServer+":8080/apiqlsv/changepasswordst.php")
+                    .url("http://" + URLserver.ipServer + ":8080/apiqlsv/changepasswordst.php")
                     .post(requestBody)
                     .addHeader("Content-Type", "application/json")
                     .build();
@@ -129,11 +138,6 @@ public class ChangePassStudentActivity extends AppCompatActivity {
             super.onPostExecute(s);
         }
     }
-    @Override
-    public void onBackPressed() {
-        Intent intent=new Intent(ChangePassStudentActivity.this,StudentActivity.class);
-        startActivity(intent);
-        finish();
-    }
+
 
 }

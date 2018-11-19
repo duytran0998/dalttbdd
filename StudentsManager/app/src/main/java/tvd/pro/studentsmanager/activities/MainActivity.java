@@ -23,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intentStudenLogin = new Intent(MainActivity.this, StudentLoginActivity.class);
                 startActivity(intentStudenLogin);
-                finish();
             }
         });
         btnTeacher.setOnClickListener(new View.OnClickListener() {
@@ -31,16 +30,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intentTeacherLgogin = new Intent(MainActivity.this, TeacherLoginActivity.class);
                 startActivity(intentTeacherLgogin);
-                finish();
             }
         });
 
 
 
     }
-    public void onDestroy() {
 
-        super.onDestroy();
-
-    }
 }
