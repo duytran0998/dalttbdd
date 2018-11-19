@@ -155,6 +155,7 @@ public class StudentLoginActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         Intent intent=new Intent(StudentLoginActivity.this,MainActivity.class);
+        intent.setAction(null);
         startActivity(intent);
         finish();
     }

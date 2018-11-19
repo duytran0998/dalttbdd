@@ -1,6 +1,7 @@
 package tvd.pro.studentsmanager.activities;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Looper;
@@ -126,6 +127,12 @@ public class ChangePassTeacherActivity extends AppCompatActivity {
             }
             super.onPostExecute(s);
         }
+    }
+    @Override
+    public void onBackPressed() {
+        Intent intent=new Intent(ChangePassTeacherActivity.this,TeacherActivity.class);
+        startActivity(intent);
+        finish();
     }
 
 }

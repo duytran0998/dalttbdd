@@ -25,7 +25,8 @@
         <activity android:name=".activities.TeacherLoginActivity" />
         <activity android:name=".activities.StudentLoginActivity" />
         <activity android:name=".activities.StudentActivity" />
-        <activity android:name=".activities.ChangePassTeacherActivity"></activity>
+        <activity android:name=".activities.ChangePassTeacherActivity" />
+        <activity android:name=".activities.StudentNotify"></activity>
     </application>
 
 </manifest>

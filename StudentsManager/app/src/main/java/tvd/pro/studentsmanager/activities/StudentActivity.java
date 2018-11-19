@@ -12,7 +12,7 @@ import tvd.pro.studentsmanager.R;
 public class StudentActivity extends AppCompatActivity {
 
     TextView txtName,txtIdStudent,txtGender;
-    ImageButton imgBtnChangePass,imgLogOut;
+    ImageButton imgBtnChangePass,imgLogOut,imgnotify;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +26,17 @@ public class StudentActivity extends AppCompatActivity {
         txtGender=findViewById(R.id.txtGender);
         imgBtnChangePass=findViewById(R.id.imgChangepassword);
         imgLogOut = findViewById(R.id.imgLogout);
+        imgnotify = findViewById(R.id.imgNotify);
+
+        imgnotify.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentNotify = new Intent(StudentActivity.this,StudentNotify.class);
+                startActivity(intentNotify);
+                finish();
+            }
+        });
+
         imgLogOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -37,7 +48,7 @@ public class StudentActivity extends AppCompatActivity {
                 //AppState.getSingleInstance().setLoggingOut(true);
                 setLoginState(true);
                 Intent intent = new Intent(StudentActivity.this,
-                        TeacherLoginActivity.class);
+                        StudentLoginActivity.class);
 
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 intent.setAction(null);
@@ -75,6 +86,7 @@ public class StudentActivity extends AppCompatActivity {
     }
     public void onBackPressed() {
         Intent intent=new Intent(StudentActivity.this,StudentLoginActivity.class);
+        intent.setAction(null);
         startActivity(intent);
         finish();
     }
