@@ -11,7 +11,7 @@
 
         </shape>
     </item>
-    <item android:drawable="@drawable/ic_person_black_24dp"
+    <item android:drawable="@drawable/ic_userteacher"
         android:gravity="center"
         android:height="50dp"
         android:width="60dp">

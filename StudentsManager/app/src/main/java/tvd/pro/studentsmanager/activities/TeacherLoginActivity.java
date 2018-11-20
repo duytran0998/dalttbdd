@@ -34,7 +34,7 @@ public class TeacherLoginActivity extends AppCompatActivity {
     private Boolean saveLogin;
     public static final String TEACHERNAME="f";
     public static final String IDFACULTY="e";
-    public static final String GENDER="d";
+    public static final String AGENDER="Nam";
     public static final String IDTEACHER="c";
     public static final String PASSWORD="a";
     public static final String USERNAME="b";
@@ -80,7 +80,7 @@ public class TeacherLoginActivity extends AppCompatActivity {
                                 Intent tec_intent = new Intent(TeacherLoginActivity.this, TeacherActivity.class);
                                 tec_intent.putExtra(TEACHERNAME, tc.getTeacherName());
                                 tec_intent.putExtra(IDTEACHER, tc.getIdTeacher());
-                                tec_intent.putExtra(GENDER, tc.getGenDer());
+                                tec_intent.putExtra(AGENDER, tc.getGenDer());
                                 tec_intent.putExtra(USERNAME, tc.getUserName());
                                 tec_intent.putExtra(IDTEACHER, tc.getIdTeacher());
                                 tec_intent.putExtra(PASSWORD, password);
@@ -117,6 +117,14 @@ public class TeacherLoginActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    @Override
+    protected void onRestart() {
+            Intent intent = getIntent();
+            finish();
+            startActivity(intent);
+            super.onRestart();
     }
 
     public void ShowMessage(final Context context, final String msg) {

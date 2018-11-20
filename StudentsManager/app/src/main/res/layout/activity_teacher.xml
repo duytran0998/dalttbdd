@@ -87,6 +87,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
+
                 <TextView
                     android:gravity="center"
                     android:layout_width="match_parent"
@@ -95,16 +96,17 @@
                     android:layout_weight="2"
                     android:text="Giới tính:"
                     android:textSize="20dp" />
-
                 <TextView
-
+                    android:id="@+id/txtGenderGV"
+                    android:text="Nam"
                     android:gravity="center"
-                    android:id="@+id/txtGender"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="10dp"
-                    android:layout_weight="1"
-                    android:textSize="15dp" />
+                    android:layout_weight="2"
+                    android:textSize="12dp" />
+
+
 
 
             </LinearLayout>
@@ -140,14 +142,14 @@
             android:orientation="horizontal">
 
             <ImageButton
-                android:id="@+id/imgScore"
+                android:id="@+id/imgNotify"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="50dp"
-                android:background="@drawable/imaschedule" />
+                android:background="@drawable/imgnotify" />
 
             <ImageButton
-                android:id="@+id/imgNotify"
+                android:id="@+id/imgStudy"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
@@ -166,14 +168,14 @@
                 android:id="@+id/imgChangepassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="70dp"
+                android:layout_marginRight="53dp"
                 android:background="@drawable/imgchangepassword" />
 
             <ImageButton
                 android:id="@+id/imgLogout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="70dp"
+                android:layout_marginLeft="53dp"
                 android:background="@drawable/imglogout" />
         </LinearLayout>
 

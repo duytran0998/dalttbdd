@@ -6,7 +6,6 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.os.ParcelUuid;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -14,16 +13,14 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.net.ServerSocket;
 import java.util.HashMap;
 import java.util.Map;
 
-import okhttp3.Request;
 import tvd.pro.studentsmanager.R;
 import tvd.pro.studentsmanager.model.AccountStudent;
-import tvd.pro.studentsmanager.model.AccountTeacher;
 import tvd.pro.studentsmanager.nextwork.SeverRequest;
 import tvd.pro.studentsmanager.nextwork.StudentLoginRequest;
-import tvd.pro.studentsmanager.nextwork.TeacherLoginRequest;
 
 
 public class StudentLoginActivity extends AppCompatActivity {
@@ -120,6 +117,13 @@ public class StudentLoginActivity extends AppCompatActivity {
         });
 
 
+    }
+    @Override
+    protected void onRestart() {
+        Intent intent = getIntent();
+        finish();
+        startActivity(intent);
+        super.onRestart();
     }
 
     public void ShowMessage(final Context context, final String msg) {

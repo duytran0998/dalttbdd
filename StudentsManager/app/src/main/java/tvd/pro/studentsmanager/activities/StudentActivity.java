@@ -12,7 +12,7 @@ import tvd.pro.studentsmanager.R;
 public class StudentActivity extends AppCompatActivity {
 
     TextView txtName,txtIdStudent,txtGender;
-    ImageButton imgBtnChangePass,imgLogOut,imgnotify;
+    ImageButton imgBtnChangePass,imgLogOut,imgnotify,imgmark;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,13 +27,21 @@ public class StudentActivity extends AppCompatActivity {
         imgBtnChangePass=findViewById(R.id.imgChangepassword);
         imgLogOut = findViewById(R.id.imgLogout);
         imgnotify = findViewById(R.id.imgNotify);
+        imgmark = findViewById(R.id.imgScore);
 
+        imgmark.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentMarkStudent = new Intent(StudentActivity.this,VewScoreStudenActivity.class);
+                intentMarkStudent.putExtra("sendIdStudent", getIntent().getStringExtra(StudentLoginActivity.IDSTUDENT));
+                startActivity(intentMarkStudent);
+            }
+        });
         imgnotify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intentNotify = new Intent(StudentActivity.this,StudentNotify.class);
                 startActivity(intentNotify);
-                /*finish();*/
             }
         });
 
@@ -47,12 +55,13 @@ public class StudentActivity extends AppCompatActivity {
                 editor.commit();
                 //AppState.getSingleInstance().setLoggingOut(true);
                 setLoginState(true);
-                Intent intent = new Intent(StudentActivity.this,
-                        StudentLoginActivity.class);
+/*                Intent intent = new Intent(StudentActivity.this, StudentLoginActivity.class);
+                StudentLoginActivity.loginPrefsEditor.clear();
+                StudentLoginActivity.loginPrefsEditor.commit();
 
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                intent.setAction(null);
-                startActivity(intent);
+                startActivity(intent);*/
+
+                finish();
 
             }
         });
