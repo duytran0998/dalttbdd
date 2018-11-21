@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activities.MainActivity"
+            android:name=".activities.teacher.MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,17 +20,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.ChangePassStudentActivity" />
-        <activity android:name=".activities.TeacherActivity" />
-        <activity android:name=".activities.TeacherLoginActivity" />
-        <activity android:name=".activities.StudentLoginActivity" />
-        <activity android:name=".activities.StudentActivity" />
-        <activity android:name=".activities.ChangePassTeacherActivity" />
-        <activity android:name=".activities.StudentNotify" />
-        <activity android:name=".activities.TeacherNotify" />
-        <activity android:name=".activities.ChamDiemActivity" />
-        <activity android:name=".activities.InputScoreStudent" />
-        <activity android:name=".activities.VewScoreStudenActivity"></activity>
+        <activity android:name=".activities.student.ChangePassStudentActivity" />
+        <activity android:name=".activities.teacher.TeacherActivity" />
+        <activity android:name=".activities.teacher.TeacherLoginActivity" />
+        <activity android:name=".activities.student.StudentLoginActivity" />
+        <activity android:name=".activities.student.StudentActivity" />
+        <activity android:name=".activities.teacher.ChangePassTeacherActivity" />
+        <activity android:name=".activities.student.StudentNotifyActivity" />
+        <activity android:name=".activities.teacher.TeacherNotifyActivity" />
+        <activity android:name=".activities.teacher.ViewTeacherScoreActivity" />
+        <activity android:name=".activities.teacher.InputScoreStudentActivity" />
+        <activity android:name=".activities.student.VewScoreStudenActivity"></activity>
     </application>
 
 </manifest>

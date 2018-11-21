@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/backgroudlogin"
     android:orientation="vertical"
-    tools:context=".activities.StudentLoginActivity">
+    tools:context=".activities.student.StudentLoginActivity">
 
 
     <ImageView

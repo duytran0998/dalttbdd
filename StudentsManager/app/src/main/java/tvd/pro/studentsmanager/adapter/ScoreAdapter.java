@@ -1,23 +1,23 @@
-package tvd.pro.studentsmanager.model;
+package tvd.pro.studentsmanager.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
 import tvd.pro.studentsmanager.R;
+import tvd.pro.studentsmanager.model.modelstudent.Score;
 
-public class SubjectAdapter extends BaseAdapter {
+public class ScoreAdapter extends BaseAdapter {
     Context context;
     int myLayout;
-    ArrayList<Subject> arrList;
+    ArrayList<Score> arrList;
 
-    public SubjectAdapter(Context context, int myLayout, ArrayList<Subject> arrList) {
+    public ScoreAdapter(Context context, int myLayout, ArrayList<Score> arrList) {
         this.context = context;
         this.myLayout = myLayout;
         this.arrList = arrList;
@@ -43,12 +43,13 @@ public class SubjectAdapter extends BaseAdapter {
         LayoutInflater inflater= (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         convertView=inflater.inflate(myLayout,null);
 
-        TextView txt_subjectname=convertView.findViewById(R.id.txt_subjectname);
-        TextView txt_subjectid=convertView.findViewById(R.id.txt_subjectID);
-        ImageView img_hinh=convertView.findViewById(R.id.imageView);
-        txt_subjectname.setText(arrList.get(position).getSubjectName());
-        txt_subjectid.setText(String.valueOf(arrList.get(position).getIdSubject()));
-        img_hinh.setImageResource(R.drawable.ic_lens_black_24dp);
+        TextView txt_ViewScoreStudentID=convertView.findViewById(R.id.txt_ViewScoreStudentID);
+        TextView txt_ViewScoreSubjectName=convertView.findViewById(R.id.txt_ViewScoreSubjectName);
+        TextView txt_ViewScore=convertView.findViewById(R.id.txt_ViewScore);
+
+        txt_ViewScoreStudentID.setText(String.valueOf(arrList.get(position).getIdStudent()));
+        txt_ViewScoreSubjectName.setText(String.valueOf(arrList.get(position).getSubjectName()));
+        txt_ViewScore.setText(String.valueOf(arrList.get(position).getScore()));
 
         return convertView;
     }

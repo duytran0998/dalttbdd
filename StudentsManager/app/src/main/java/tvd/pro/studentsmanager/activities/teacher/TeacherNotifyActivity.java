@@ -1,4 +1,4 @@
-package tvd.pro.studentsmanager.activities;
+package tvd.pro.studentsmanager.activities.teacher;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,7 +7,7 @@ import android.widget.ListView;
 
 import tvd.pro.studentsmanager.R;
 
-public class TeacherNotify extends AppCompatActivity {
+public class TeacherNotifyActivity extends AppCompatActivity {
     String[] content = {
             "Thông báo công văn về việc ủy quyền ký thừa ủy quyền cho Trưởng Khoa Quốc tế và Trưởng Khoa Ngoại ngữ",
             "Thông báo công văn về việc tuyển sinh đào tạo thạc sĩ tại Nhật Bản năm 2019",
@@ -21,7 +21,7 @@ public class TeacherNotify extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher_notify);
         lvNotify = findViewById(R.id.lvNotify);
-        lvNotify.setAdapter(new ArrayAdapter<>(TeacherNotify.this,
+        lvNotify.setAdapter(new ArrayAdapter<>(TeacherNotifyActivity.this,
                 android.R.layout.simple_list_item_1, content));
 
     }

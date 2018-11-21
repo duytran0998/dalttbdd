@@ -1,23 +1,16 @@
 package tvd.pro.studentsmanager.nextwork;
 
 
-import android.widget.Toast;
-
-
 import com.google.gson.Gson;
-import com.google.gson.JsonObject;
 
 import org.json.JSONObject;
 
-import java.io.IOException;
 import java.util.Map;
 
 import okhttp3.MultipartBody;
 import okhttp3.Request;
 import okhttp3.RequestBody;
-import okhttp3.Response;
-import tvd.pro.studentsmanager.model.AccountStudent;
-import tvd.pro.studentsmanager.model.AccountTeacher;
+import tvd.pro.studentsmanager.model.modelstudent.AccountStudent;
 
 public class StudentLoginRequest extends SeverRequest {
     public StudentLoginRequest(SeverRequestListener listener) {

@@ -1,10 +1,9 @@
-package tvd.pro.studentsmanager.activities;
+package tvd.pro.studentsmanager.activities.student;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v7.app.AppCompatActivity;
@@ -23,22 +22,22 @@ import okhttp3.Response;
 import tvd.pro.studentsmanager.R;
 import tvd.pro.studentsmanager.nextwork.URLserver;
 
-public class ChangePassTeacherActivity extends AppCompatActivity {
+public class ChangePassStudentActivity extends AppCompatActivity {
     EditText oldPassWord, newPassWord, renewPassWord;
-    String getIdTeacher, getPassWord;
+    String getIdStudent, getPassWord;
     Button btnUpdate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_change_pass_teacher);
+        setContentView(R.layout.activity_change_pass_student);
         oldPassWord = findViewById(R.id.oldPassword);
         newPassWord = findViewById(R.id.newPassWord);
         renewPassWord = findViewById(R.id.renewPassWord);
         btnUpdate = findViewById(R.id.btnUpdate);
 
 
-        getIdTeacher = getIntent().getStringExtra("sendIdTeacher");
+        getIdStudent = getIntent().getStringExtra("sendIdStudent");
         getPassWord = getIntent().getStringExtra("sendPassWord");
 
 
@@ -56,10 +55,10 @@ public class ChangePassTeacherActivity extends AppCompatActivity {
                         ShowMessage(getBaseContext(), "Đổi mật khẩu thành công!");
 
 
-                        Intent intentLoginTC = new Intent(ChangePassTeacherActivity.this, TeacherLoginActivity.class);
-                        TeacherLoginActivity.loginPrefsEditor.clear();
-                        TeacherLoginActivity.loginPrefsEditor.commit();
-                        startActivity(intentLoginTC);
+                        Intent intentLoginST = new Intent(ChangePassStudentActivity.this, StudentLoginActivity.class);
+                        StudentLoginActivity.loginPrefsEditor.clear();
+                        StudentLoginActivity.loginPrefsEditor.commit();
+                        startActivity(intentLoginST);
 
 
                     } else {
@@ -108,11 +107,11 @@ public class ChangePassTeacherActivity extends AppCompatActivity {
             RequestBody requestBody = new MultipartBody.Builder()
                     .addFormDataPart("oldPW", oldPass)
                     .addFormDataPart("newPW", newPass)
-                    .addFormDataPart("idStudent", getIdTeacher)
+                    .addFormDataPart("idStudent", getIdStudent)
                     .setType(MultipartBody.FORM)
                     .build();
             Request request = new Request.Builder()
-                    .url("http://" + URLserver.ipServer + ":8080/apiqlsv/changepasswordtc.php")
+                    .url("http://" + URLserver.ipServer + ":8080/apiqlsv/changepasswordst.php")
                     .post(requestBody)
                     .addHeader("Content-Type", "application/json")
                     .build();
@@ -130,7 +129,13 @@ public class ChangePassTeacherActivity extends AppCompatActivity {
             return null;
         }
 
+        @Override
+        protected void onPostExecute(String s) {
+            if (response.isSuccessful()) {
 
+            }
+            super.onPostExecute(s);
+        }
     }
 
 

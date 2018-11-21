@@ -1,4 +1,4 @@
-package tvd.pro.studentsmanager.model;
+package tvd.pro.studentsmanager.model.modelstudent;
 
 
 import com.google.gson.annotations.SerializedName;

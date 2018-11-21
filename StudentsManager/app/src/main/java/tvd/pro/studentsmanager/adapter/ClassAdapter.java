@@ -1,4 +1,4 @@
-package tvd.pro.studentsmanager.model;
+package tvd.pro.studentsmanager.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,6 +11,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import tvd.pro.studentsmanager.R;
+import tvd.pro.studentsmanager.model.modelteacher.TeacherClass;
 
 public class ClassAdapter extends BaseAdapter {
     Context context;

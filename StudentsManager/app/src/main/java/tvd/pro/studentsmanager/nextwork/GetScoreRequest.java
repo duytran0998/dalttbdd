@@ -10,9 +10,7 @@ import java.util.Map;
 import okhttp3.MultipartBody;
 import okhttp3.Request;
 import okhttp3.RequestBody;
-import tvd.pro.studentsmanager.model.Score;
-import tvd.pro.studentsmanager.model.ScoreStudent;
-import tvd.pro.studentsmanager.model.Subject;
+import tvd.pro.studentsmanager.model.modelstudent.Score;
 
 public class GetScoreRequest extends SeverRequest {
     public GetScoreRequest(SeverRequestListener listener) {

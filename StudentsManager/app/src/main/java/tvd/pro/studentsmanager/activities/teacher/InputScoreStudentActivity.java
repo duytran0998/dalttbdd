@@ -1,4 +1,4 @@
-package tvd.pro.studentsmanager.activities;
+package tvd.pro.studentsmanager.activities.teacher;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -12,12 +12,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 import tvd.pro.studentsmanager.R;
-import tvd.pro.studentsmanager.model.ScoreStudentAdapter;
+import tvd.pro.studentsmanager.adapter.ScoreStudentAdapter;
 import tvd.pro.studentsmanager.nextwork.InputScoreRequest;
 import tvd.pro.studentsmanager.nextwork.SeverRequest;
 import tvd.pro.studentsmanager.nextwork.UpdateScoreRequest;
 
-public class InputScoreStudent extends AppCompatActivity {
+public class InputScoreStudentActivity extends AppCompatActivity {
    private EditText edtMaSV;
    private EditText edtTenSV;
    private EditText edtMaMonHoc;
@@ -107,7 +107,7 @@ public class InputScoreStudent extends AppCompatActivity {
                     request.execute(parameter);
 
                 }else{
-                    Toast.makeText(InputScoreStudent.this, "Điểm nhập vào không đúng.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(InputScoreStudentActivity.this, "Điểm nhập vào không đúng.", Toast.LENGTH_SHORT).show();
                 }
 
             }
@@ -156,7 +156,7 @@ public class InputScoreStudent extends AppCompatActivity {
                     request.execute(parameter);
 
                 }else{
-                    Toast.makeText(InputScoreStudent.this, "Điểm nhập vào không đúng.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(InputScoreStudentActivity.this, "Điểm nhập vào không đúng.", Toast.LENGTH_SHORT).show();
                 }
 
             }

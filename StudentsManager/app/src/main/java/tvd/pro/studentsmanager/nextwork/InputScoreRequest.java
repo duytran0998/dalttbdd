@@ -1,19 +1,13 @@
 package tvd.pro.studentsmanager.nextwork;
 
 
-import com.google.gson.JsonObject;
-
-import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
 import java.util.Map;
 
 import okhttp3.MultipartBody;
 import okhttp3.Request;
 import okhttp3.RequestBody;
-import tvd.pro.studentsmanager.model.Subject;
-import tvd.pro.studentsmanager.model.TeacherClass;
 
 public class InputScoreRequest extends SeverRequest {
     public InputScoreRequest(SeverRequestListener listener) {

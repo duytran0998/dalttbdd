@@ -1,4 +1,4 @@
-package tvd.pro.studentsmanager.activities;
+package tvd.pro.studentsmanager.activities.student;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,12 +13,11 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.net.ServerSocket;
 import java.util.HashMap;
 import java.util.Map;
 
 import tvd.pro.studentsmanager.R;
-import tvd.pro.studentsmanager.model.AccountStudent;
+import tvd.pro.studentsmanager.model.modelstudent.AccountStudent;
 import tvd.pro.studentsmanager.nextwork.SeverRequest;
 import tvd.pro.studentsmanager.nextwork.StudentLoginRequest;
 

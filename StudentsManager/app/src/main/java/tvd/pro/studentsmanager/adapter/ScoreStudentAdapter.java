@@ -1,21 +1,20 @@
-package tvd.pro.studentsmanager.model;
+package tvd.pro.studentsmanager.adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
 import tvd.pro.studentsmanager.R;
-import tvd.pro.studentsmanager.activities.ChamDiemActivity;
-import tvd.pro.studentsmanager.activities.InputScoreStudent;
+import tvd.pro.studentsmanager.activities.teacher.InputScoreStudentActivity;
+import tvd.pro.studentsmanager.model.Select;
+import tvd.pro.studentsmanager.model.modelstudent.ScoreStudent;
 
 public class ScoreStudentAdapter extends BaseAdapter {
     Context context;
@@ -69,7 +68,7 @@ public class ScoreStudentAdapter extends BaseAdapter {
             public void onClick(View view) {
                 //Intent i=new Intent(context,UpdateSinhVinActivity.class);
                 // context.startActivity(i);
-                Intent intent=new Intent(context,InputScoreStudent.class);
+                Intent intent=new Intent(context,InputScoreStudentActivity.class);
 
 
 

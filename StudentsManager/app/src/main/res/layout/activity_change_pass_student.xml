@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/backgroudlogin"
     android:orientation="vertical"
-    tools:context=".activities.ChangePassStudentActivity">
+    tools:context=".activities.student.ChangePassStudentActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

@@ -1,6 +1,5 @@
-package tvd.pro.studentsmanager.activities;
+package tvd.pro.studentsmanager.activities.student;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
@@ -13,11 +12,9 @@ import java.util.Map;
 
 import tvd.pro.studentsmanager.R;
 
-import tvd.pro.studentsmanager.model.ScoreAdapter;
-import tvd.pro.studentsmanager.model.Score;
+import tvd.pro.studentsmanager.adapter.ScoreAdapter;
+import tvd.pro.studentsmanager.model.modelstudent.Score;
 import tvd.pro.studentsmanager.nextwork.GetScoreRequest;
-import tvd.pro.studentsmanager.nextwork.GetSubjectRequest;
-import tvd.pro.studentsmanager.nextwork.ScoreStudentRequest;
 import tvd.pro.studentsmanager.nextwork.SeverRequest;
 
 public class VewScoreStudenActivity extends AppCompatActivity {

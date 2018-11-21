@@ -1,4 +1,4 @@
-package tvd.pro.studentsmanager.activities;
+package tvd.pro.studentsmanager.activities.teacher;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -7,13 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import tvd.pro.studentsmanager.R;
 
 public class TeacherActivity extends AppCompatActivity {
 
-    TextView txtTeacherName,txtIdTeacher,txtGender;
+    TextView txtUserTeacher,txtIdTeacher,txtGenderTeacher;
     ImageButton imgBtnChangePass,imgLogOut,imgNotifyTC,imgStudy;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,19 +23,19 @@ public class TeacherActivity extends AppCompatActivity {
 
     }
     private void getView() {
-        txtTeacherName=findViewById(R.id.txtTeacherName);
+        txtUserTeacher=findViewById(R.id.txtUserTeacher);
         txtIdTeacher=findViewById(R.id.txtIdTeacher);
-        txtGender=findViewById(R.id.txtGenderGV);
+        txtGenderTeacher=findViewById(R.id.txtGenderTeacher);
         imgBtnChangePass=findViewById(R.id.imgChangepassword);
         imgLogOut=findViewById(R.id.imgLogout);
         imgNotifyTC=findViewById(R.id.imgNotify);
-        imgStudy=findViewById(R.id.imgStudy);
+        imgStudy=findViewById(R.id.imgstudy);
 
 
         imgStudy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentStudy = new Intent(TeacherActivity.this,ChamDiemActivity.class);
+                Intent intentStudy = new Intent(TeacherActivity.this,ViewTeacherScoreActivity.class);
                 startActivity(intentStudy);
             }
         });
@@ -46,7 +45,7 @@ public class TeacherActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                Intent intentNotifyTC = new Intent(TeacherActivity.this,TeacherNotify.class);
+                Intent intentNotifyTC = new Intent(TeacherActivity.this,TeacherNotifyActivity.class);
                 startActivity(intentNotifyTC);
             }
         });
@@ -87,9 +86,9 @@ public class TeacherActivity extends AppCompatActivity {
     private void getInforUser()
     {
 
-        txtTeacherName.setText(getIntent().getStringExtra(TeacherLoginActivity.TEACHERNAME));
+        txtUserTeacher.setText(getIntent().getStringExtra(TeacherLoginActivity.TEACHERNAME));
         txtIdTeacher.setText(getIntent().getStringExtra(TeacherLoginActivity.IDTEACHER));
-        txtGender.setText(getIntent().getStringExtra(TeacherLoginActivity.AGENDER));
+        txtGenderTeacher.setText("Nam");
 
 
     }

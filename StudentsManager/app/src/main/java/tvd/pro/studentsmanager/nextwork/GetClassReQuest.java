@@ -10,8 +10,7 @@ import java.util.Map;
 import okhttp3.MultipartBody;
 import okhttp3.Request;
 import okhttp3.RequestBody;
-import tvd.pro.studentsmanager.model.Subject;
-import tvd.pro.studentsmanager.model.TeacherClass;
+import tvd.pro.studentsmanager.model.modelteacher.TeacherClass;
 
 public class GetClassReQuest extends SeverRequest {
     public GetClassReQuest(SeverRequestListener listener) {

@@ -1,4 +1,4 @@
-package tvd.pro.studentsmanager.activities;
+package tvd.pro.studentsmanager.activities.student;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -40,7 +40,7 @@ public class StudentActivity extends AppCompatActivity {
         imgnotify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentNotify = new Intent(StudentActivity.this,StudentNotify.class);
+                Intent intentNotify = new Intent(StudentActivity.this,StudentNotifyActivity.class);
                 startActivity(intentNotify);
             }
         });

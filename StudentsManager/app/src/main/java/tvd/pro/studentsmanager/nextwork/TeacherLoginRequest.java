@@ -7,15 +7,12 @@ import com.google.gson.Gson;
 
 import org.json.JSONObject;
 
-import java.io.IOException;
 import java.util.Map;
 
 import okhttp3.MultipartBody;
 import okhttp3.Request;
 import okhttp3.RequestBody;
-import okhttp3.Response;
-import tvd.pro.studentsmanager.model.AccountStudent;
-import tvd.pro.studentsmanager.model.AccountTeacher;
+import tvd.pro.studentsmanager.model.modelteacher.AccountTeacher;
 
 public class TeacherLoginRequest extends SeverRequest {
     public TeacherLoginRequest(SeverRequestListener listener) {

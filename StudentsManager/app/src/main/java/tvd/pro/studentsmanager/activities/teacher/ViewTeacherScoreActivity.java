@@ -1,7 +1,6 @@
-package tvd.pro.studentsmanager.activities;
+package tvd.pro.studentsmanager.activities.teacher;
 
 import android.content.Intent;
-import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,19 +15,19 @@ import java.util.HashMap;
 import java.util.Map;
 
 import tvd.pro.studentsmanager.R;
-import tvd.pro.studentsmanager.model.ClassAdapter;
-import tvd.pro.studentsmanager.model.ScoreStudent;
-import tvd.pro.studentsmanager.model.ScoreStudentAdapter;
+import tvd.pro.studentsmanager.adapter.ClassAdapter;
+import tvd.pro.studentsmanager.model.modelstudent.ScoreStudent;
+import tvd.pro.studentsmanager.adapter.ScoreStudentAdapter;
 import tvd.pro.studentsmanager.model.Select;
 import tvd.pro.studentsmanager.model.Subject;
-import tvd.pro.studentsmanager.model.SubjectAdapter;
-import tvd.pro.studentsmanager.model.TeacherClass;
+import tvd.pro.studentsmanager.adapter.SubjectAdapter;
+import tvd.pro.studentsmanager.model.modelteacher.TeacherClass;
 import tvd.pro.studentsmanager.nextwork.GetClassReQuest;
 import tvd.pro.studentsmanager.nextwork.GetSubjectRequest;
 import tvd.pro.studentsmanager.nextwork.ScoreStudentRequest;
 import tvd.pro.studentsmanager.nextwork.SeverRequest;
 
-public class ChamDiemActivity extends AppCompatActivity {
+public class ViewTeacherScoreActivity extends AppCompatActivity {
     Spinner spinner_subject;
     ArrayList<Subject> arrSubject;
     Spinner spinner_class;
@@ -44,7 +43,7 @@ public class ChamDiemActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_chamdiem);
+        setContentView(R.layout.activity_view_teacher_score);
         //get view
         spinner_subject  = (Spinner) findViewById(R.id.spin_subject);
         spinner_class=findViewById(R.id.spin_class);
@@ -75,7 +74,7 @@ public class ChamDiemActivity extends AppCompatActivity {
                  if (obj != null) {
                      arrSubject= (ArrayList<Subject>) obj;
 
-                     SubjectAdapter adapter=new SubjectAdapter(getBaseContext(),R.layout.dong_mon_hoc,arrSubject);
+                     SubjectAdapter adapter=new SubjectAdapter(getBaseContext(),R.layout.dong_subject,arrSubject);
                      spinner_subject.setAdapter(adapter);
                      adapter.notifyDataSetChanged();
                      spinner_subject.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -83,7 +82,7 @@ public class ChamDiemActivity extends AppCompatActivity {
                          public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
                               Select.MAMONHOC = arrSubject.get(i).getIdSubject();
-                             ChamDiemActivity.this.getClass(String.valueOf(arrSubject.get(i).getIdSubject()),"8");
+                             ViewTeacherScoreActivity.this.getClass(String.valueOf(arrSubject.get(i).getIdSubject()),"8");
 
                          }
 

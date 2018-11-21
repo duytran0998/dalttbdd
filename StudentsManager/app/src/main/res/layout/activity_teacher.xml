@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activities.TeacherActivity">
+    tools:context=".activities.teacher.TeacherActivity">
 
 
     <LinearLayout
@@ -40,13 +39,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="10dp"
-                    android:layout_weight="2"
+                    android:layout_weight="3"
                     android:text="Tên:"
-                    android:textSize="20dp" />
+                    android:textSize="17dp" />
 
                 <TextView
                     android:gravity="center"
-                    android:id="@+id/txtTeacherName"
+                    android:id="@+id/txtUserTeacher"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="10dp"
@@ -65,9 +64,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="10dp"
-                    android:layout_weight="2"
-                    android:text="ID:"
-                    android:textSize="20dp" />
+                    android:layout_weight="3"
+                    android:text="MSGV:"
+                    android:textSize="17dp" />
 
                 <TextView
                     android:gravity="center"
@@ -87,26 +86,24 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-
                 <TextView
                     android:gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="10dp"
-                    android:layout_weight="2"
+                    android:layout_weight="3"
                     android:text="Giới tính:"
-                    android:textSize="20dp" />
+                    android:textSize="17dp" />
+
                 <TextView
-                    android:id="@+id/txtGenderGV"
-                    android:text="Nam"
+
                     android:gravity="center"
+                    android:id="@+id/txtGenderTeacher"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="10dp"
-                    android:layout_weight="2"
+                    android:layout_weight="1"
                     android:textSize="12dp" />
-
-
 
 
             </LinearLayout>
@@ -149,7 +146,7 @@
                 android:background="@drawable/imgnotify" />
 
             <ImageButton
-                android:id="@+id/imgStudy"
+                android:id="@+id/imgstudy"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
@@ -168,14 +165,14 @@
                 android:id="@+id/imgChangepassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="53dp"
+                android:layout_marginRight="50dp"
                 android:background="@drawable/imgchangepassword" />
 
             <ImageButton
                 android:id="@+id/imgLogout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="53dp"
+                android:layout_marginLeft="50dp"
                 android:background="@drawable/imglogout" />
         </LinearLayout>
 

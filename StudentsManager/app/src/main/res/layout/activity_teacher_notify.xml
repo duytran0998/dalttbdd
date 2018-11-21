@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.TeacherNotify">
+    tools:context=".activities.teacher.TeacherNotifyActivity">
 
     <ListView
         android:id="@+id/lvNotify"
