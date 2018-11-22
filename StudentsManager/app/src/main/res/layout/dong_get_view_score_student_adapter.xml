@@ -5,6 +5,7 @@
     android:orientation="horizontal"
     android:layout_marginTop="10dp"
     android:layout_marginLeft="10dp"
+    android:background="@drawable/backgroudlogin"
     >
     <TextView
         android:gravity="center"

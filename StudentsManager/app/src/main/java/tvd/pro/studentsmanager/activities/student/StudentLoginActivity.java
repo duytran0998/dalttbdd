@@ -25,7 +25,9 @@ import tvd.pro.studentsmanager.nextwork.StudentLoginRequest;
 public class StudentLoginActivity extends AppCompatActivity {
     EditText edtAccount, edtPassword;
     Button btnLogin;
+/*
     CheckBox saveLoginCheckBox;
+*/
 
     private SharedPreferences loginPreferences;
     public static SharedPreferences.Editor loginPrefsEditor;
@@ -43,9 +45,9 @@ public class StudentLoginActivity extends AppCompatActivity {
         edtAccount =  findViewById(R.id.edtAccount);
         edtPassword = findViewById(R.id.edtPassword);
         btnLogin = findViewById(R.id.btnLogin);
-        saveLoginCheckBox = findViewById(R.id.saveLoginCheckBox);
+//        saveLoginCheckBox = findViewById(R.id.saveLoginCheckBox);
 
-        loginPreferences = getSharedPreferences("loginPrefs", MODE_PRIVATE);
+       /* loginPreferences = getSharedPreferences("loginPrefs", MODE_PRIVATE);
         loginPrefsEditor = loginPreferences.edit();
 
         saveLogin = loginPreferences.getBoolean("saveLogin", false);
@@ -53,7 +55,7 @@ public class StudentLoginActivity extends AppCompatActivity {
             edtAccount.setText(loginPreferences.getString("username", ""));
             edtPassword.setText(loginPreferences.getString("password", ""));
             saveLoginCheckBox.setChecked(true);
-        }
+        }*/
 
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
@@ -101,7 +103,7 @@ public class StudentLoginActivity extends AppCompatActivity {
                 request.execute(parameter);
 
 
-                if (saveLoginCheckBox.isChecked()) {
+               /* if (saveLoginCheckBox.isChecked()) {
                     loginPrefsEditor.putBoolean("saveLogin", true);
                     loginPrefsEditor.putString("username", username);
                     loginPrefsEditor.putString("password", password);
@@ -110,7 +112,7 @@ public class StudentLoginActivity extends AppCompatActivity {
                 } else {
                     loginPrefsEditor.clear();
                     loginPrefsEditor.commit();
-                }
+                }*/
 
             }
         });

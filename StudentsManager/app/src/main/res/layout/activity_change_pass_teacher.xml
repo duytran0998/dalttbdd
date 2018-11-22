@@ -90,7 +90,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:background="#ff6715"
+        android:background="#364242"
         android:text="Cập nhật mật khẩu mới"
         android:textColor="#ffffff" />
 

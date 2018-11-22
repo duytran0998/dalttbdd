@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/backgroudlogin"
     tools:context=".activities.teacher.TeacherActivity">
+
 
 
     <LinearLayout
@@ -19,7 +22,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
-            android:layout_weight="1"
+            android:layout_weight="0"
             android:background="@drawable/avatar_teacher" />
 
         <LinearLayout
@@ -35,6 +38,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:textColor="#ffffff"
                     android:gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -44,6 +48,7 @@
                     android:textSize="17dp" />
 
                 <TextView
+                    android:textColor="#ffffff"
                     android:gravity="center"
                     android:id="@+id/txtUserTeacher"
                     android:layout_width="match_parent"
@@ -60,15 +65,18 @@
                 android:layout_height="wrap_content">
 
                 <TextView
+                    android:textColor="#ffffff"
+
                     android:gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="10dp"
                     android:layout_weight="3"
-                    android:text="MSGV:"
+                    android:text="MSSV:"
                     android:textSize="17dp" />
 
                 <TextView
+                    android:textColor="#ffffff"
                     android:gravity="center"
                     android:id="@+id/txtIdTeacher"
                     android:layout_width="match_parent"
@@ -87,6 +95,8 @@
                 android:layout_height="wrap_content">
 
                 <TextView
+                    android:textColor="#ffffff"
+
                     android:gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -96,7 +106,7 @@
                     android:textSize="17dp" />
 
                 <TextView
-
+                    android:textColor="#ffffff"
                     android:gravity="center"
                     android:id="@+id/txtGenderTeacher"
                     android:layout_width="match_parent"
@@ -114,12 +124,13 @@
     </LinearLayout>
 
     <TextView
+
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:gravity="center"
         android:text="THÔNG TIN CÁ NHÂN"
         android:textAlignment="center"
-        android:textColor="#c3454040"
+        android:textColor="#ffffff"
         android:textSize="20dp"
         android:textStyle="bold" />
 
@@ -140,17 +151,19 @@
 
             <ImageButton
                 android:id="@+id/imgNotify"
-                android:layout_width="wrap_content"
+                android:layout_width="110dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="50dp"
-                android:background="@drawable/imgnotify" />
+                android:background="#ffffff"
+                android:src="@drawable/imgnotify" />
 
             <ImageButton
                 android:id="@+id/imgstudy"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
-                android:background="@drawable/imgstudy" />
+                android:background="#ffffff"
+                android:src="@drawable/imgstudy" />
 
         </LinearLayout>
 
@@ -162,18 +175,20 @@
             android:orientation="horizontal">
 
             <ImageButton
+                android:layout_width="110dp"
                 android:id="@+id/imgChangepassword"
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="50dp"
-                android:background="@drawable/imgchangepassword" />
+                android:background="#ffffff"
+                android:src="@drawable/imgchangepassword" />
 
             <ImageButton
                 android:id="@+id/imgLogout"
-                android:layout_width="wrap_content"
+                android:layout_width="110dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
-                android:background="@drawable/imglogout" />
+                android:background="#ffffff"
+                android:src="@drawable/imglogout" />
         </LinearLayout>
 
         <LinearLayout

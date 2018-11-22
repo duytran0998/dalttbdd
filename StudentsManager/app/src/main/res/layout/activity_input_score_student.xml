@@ -118,7 +118,7 @@
     android:layout_height="wrap_content"
     android:layout_gravity="center"
     android:layout_marginTop="20dp"
-    android:background="#ff6715"
+        android:background="#364242"
     android:text="Nhâp điểm"
     android:textColor="#ffffff" />
     <Button
@@ -127,7 +127,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:background="#ff6715"
+        android:background="#364242"
         android:text="Sửa điểm"
         android:textColor="#ffffff" />
 </LinearLayout>
